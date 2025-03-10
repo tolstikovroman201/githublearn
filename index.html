@@ -12,6 +12,7 @@
             padding: 0;
             background-color: #f8f9fa;
             color: #212529;
+            transition: background 0.3s;
         }
         header {
             background: linear-gradient(135deg, #007bff, #6610f2);
@@ -26,7 +27,6 @@
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            overflow: hidden;
             padding: 20px 0;
         }
         section {
@@ -63,6 +63,17 @@
         .btn:hover {
             background: #0056b3;
         }
+        .doctor {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .doctor img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +96,18 @@
         </section>
         
         <section>
+            <h2>Главный врач</h2>
+            <div class="doctor">
+                <img src="doctor.jpg" alt="Главный врач">
+                <div>
+                    <h3>Др. Иван Петров</h3>
+                    <p>Опытный врач с более чем 20-летним стажем в области медицинских технологий и искусственного интеллекта.</p>
+                    <p>«Мы используем ИИ, чтобы сделать медицину точнее и доступнее для каждого пациента».</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
             <h2>Контакты</h2>
             <p>Email: info@aimedsolutions.com</p>
             <p>Телефон: +7 (900) 123-45-67</p>
@@ -95,5 +118,19 @@
     <footer>
         <p>&copy; 2025 AI Медицинские Решения. Все права защищены.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                section.addEventListener("mouseenter", () => {
+                    section.style.boxShadow = "0px 6px 25px rgba(0, 0, 0, 0.15)";
+                });
+                section.addEventListener("mouseleave", () => {
+                    section.style.boxShadow = "0px 4px 20px rgba(0, 0, 0, 0.1)";
+                });
+            });
+        });
+    </script>
 </body>
 </html>
